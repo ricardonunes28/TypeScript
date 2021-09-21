@@ -1,64 +1,117 @@
-// interface DadosApi{
-//     nome: String
-//     idade: Number
-// };
+interface UserProps{
+    firtsName: String
+    lastName:String
+    email:String
+    password:String
+    cpf:String
+    contacto:Number
+    isAdmin: boolean
+}
 
+class User implements UserProps{
+    firtsName!: String
+    lastName!:String
+    email!:String
+    password!:String
+    cpf!:String
+    contacto!:Number
+    isAdmin!: boolean
 
-// function pegarDadosApi (): DadosApi {
-//     return {
-//         nome: "Ricardo",
-//         idade: 28
-//     }
-// };
+constructor(firtsName: String,
+    lastName:String,
+    email:String,
+    password:String,
+    cpf:String,
+    contacto:Number,
+    isAdmin: boolean){
 
-// let dados = pegarDadosApi();
+    this.firtsName = firtsName
+    this.lastName = lastName
+    this.email = email
+    this.password = password
+    this.cpf = cpf
+    this.contacto = contacto
+    this.isAdmin = isAdmin
 
-// console.log (dados.idade);
+}
 
-// Criando um classe em TS
+propriedadesUser(){
+    // console.log(this.firtsName)
+    // console.log(this.lastName)
+    // console.log(this.email)
+    // console.log(this.password)
+    // console.log(this.cpf)
+    // console.log(this.contacto)
+    // console.log(this.isAdmin)
 
-// class Pessoa{
-//     nome!:String
-//     idade!:Number
-//     cpf!:String 
+}
 
-//     constructor(nome:String, idade: Number, cpf:String){
-//         this.nome = nome
-//         this.idade = idade
-//         this.cpf = cpf
-//     }
+getFirtsName(){
+    return this.firtsName
+}
 
-//     escreverPropriedades(){
-//         console.log(this.nome)
-//         console.log(this.idade)
-//         console.log(this.cpf)
-//     }
-// }
+setFirtsName(firtsName:String){
+    this.firtsName = firtsName
+}
 
-// let pessoa = new Pessoa("Ricardo",28,"111-222-333-44")
+getlastName(){
+   return this.lastName;
+}
 
-// pessoa.escreverPropriedades
+setlastName(lastName: String){
+   this.lastName = lastName
+}
 
-class Carro {
-    marca!: String
-    ano!: Number
-    modelo!: String
+getemail(){
+    return this.email
+}
 
-    constructor(marca: String, ano: Number, modelo: String) {
-        this.marca = marca
-        this.ano = ano
-        this.modelo = modelo
-    }
+setemail(email:String){
+    this.email=email
+}
 
-    propriedadesCarro() {
-        console.log(this.marca)
-        console.log( this.ano)
-        console.log( this.modelo)
-    }
+getpassword(){
+    return this.password
+}
+
+setpassword(password:String){
+    this.password=password
+}
+
+getcpf(){
+    return this.cpf
+}
+
+setcpf(cpf:String){
+    this.cpf=cpf
+}
+getcontacto(){
+    return this.contacto
+}
+
+setcontacto(contacto:Number){
+    this.contacto=contacto
+}
+getisAdmin(){
+    return this.isAdmin
+}
+
+setisAdmin(isAdmin:boolean){
+    this.isAdmin = isAdmin
+}
+
 
 
 }
 
-let carros = new Carro("Volks", 1990, "Passat")
+let user = new User ("Ricardo","Nunes","riardo@ricardo","123456abc","111-111-111-12",1191234567,true);
 
-carros.propriedadesCarro();
+// user.propriedadesUser();
+
+user.setFirtsName("joão");
+
+console.log(user);
+
+
+
+
